@@ -1,13 +1,15 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './edit.css'
 import { BsPlayFill } from "react-icons/bs";
 import { BsStopFill } from "react-icons/bs";
 import { SiConvertio } from 'react-icons/si';
 import { HiLogout } from 'react-icons/hi'
 import { BiReset } from 'react-icons/bi'
-
 import 'regenerator-runtime/runtime'
 import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition';
+
+// import PDFFile from '../PDFFile';
+// import { PDFDownloadLink } from '@react-pdf/renderer';
 
 
 const Edit = () => {
@@ -42,6 +44,22 @@ const Edit = () => {
         resetTranscript();
     };
 
+
+    const convertingPDF = () => {
+        const element = document.createElement('a');
+        const file = new Blob([document.getElementById('input').innerHTML], { type: "text/plain; charset=ut-8" });
+        const str = { transcript };
+        console.log(document.getElementById('input').innerHTML);
+        // console.log(str);
+
+        element.href = URL.createObjectURL(file);
+        element.download = "NewDoc.txt";
+
+        document.body.appendChild(element);
+        element.click();
+    };
+
+
     return (
         <div className='background-overlay'>
 
@@ -53,7 +71,7 @@ const Edit = () => {
                 <button className='edit_container_left_button' onClick={startListerning}><BsPlayFill size={30} color='white' /></button>
                 <button className='edit_container_left_button' onClick={stopListening}><BsStopFill size={30} color='white' /></button>
                 <button className='edit_container_left_button' onClick={resetListening}><BiReset size={30} color='white' /></button>
-                <button className='edit_container_left_button'><SiConvertio size={30} color='white' /></button>
+                <button className='edit_container_left_button' onClick={convertingPDF}><SiConvertio size={30} color='white' /></button>
             </div>
 
 
@@ -71,9 +89,10 @@ const Edit = () => {
                         <button className='edit_container_left_button'><HiLogout size={30} color='white' /></button>
                     </div>
                     <div className='edit_container_right_space'>
-                        <div className="edit_container_right_space_text">
+                        <div className="edit_container_right_space_text" id='input'>
 
                             {transcript}
+
                         </div>
 
                     </div>
