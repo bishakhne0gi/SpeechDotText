@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@500&display=swap');
+
+
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: rgba(161, 158, 230, 0.32);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    box-shadow: inset 0 0 5px rgba(105, 102, 221, 0.32);
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(105, 102, 221, 0.32);
+}
+
+
+
+
+.background-overlay {
+    background: radial-gradient(107.54% 254.53% at 6.48% 6.91%, rgba(255, 255, 255, 0.47) 0.51%, rgba(255, 255, 255, 0.154447) 29.47%, rgba(255, 255, 255, 0.116476) 52.81%, rgba(255, 255, 255, 0.0707209) 77.75%, rgba(255, 255, 255, 0) 100%);
+    mix-blend-mode: normal;
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* padding-top: 5rem; */
+}
+
+.edit_blur_container {
+    display: flex;
+    height: 60vh;
+    width: 60vh;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+    background: rgba(238, 234, 242, 0.5);
+    border-radius: 30px;
+    align-items: center;
+    z-index: 1;
+    margin-top: 10rem;
+    filter: blur(2px);
+
+
+}
+
+.edit_blur_button {
+    display: flex;
+    height: 60vh;
+    width: 60vh;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+    /* background: rgba(238, 234, 242, 0.5); */
+    border-radius: 30px;
+    align-items: center;
+    z-index: 20;
+    margin-top: 10rem;
+    margin-left: -27rem;
+}
+
+.edit_container {
+    height: 70vh;
+    width: 70vw;
+    background: rgba(238, 234, 242, 0.7);
+    margin-left: -14rem;
+    box-shadow: 14px 14px 10px rgba(0, 0, 0, 0.25);
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    z-index: 10;
+}
+
+
+
+.edit_container_left {
+    display: flex;
+    flex-basis: 40%;
+
+    height: 60vh;
+    align-items: center;
+    flex-direction: column;
+}
+
+.edit_container_left_button {
+    height: 4rem;
+    width: 10rem;
+    background: #6966DD;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+    z-index: 30 !important;
+}
+
+
+
+
+
+
+
+.edit_container_right {
+    gap: 2rem;
+    display: flex;
+    flex-basis: 60%;
+    align-items: flex-end;
+    justify-content: center;
+    margin: 2rem;
+    flex-direction: column;
+    z-index: -10;
+}
+
+.edit_container_right_logout {
+    display: flex;
+    align-self: flex-end;
+}
+
+.edit_container_right_space {
+
+    resize: none;
+    background: rgba(105, 102, 221, 0.32);
+    border-radius: 30px;
+    display: flex;
+    padding: 2rem;
+    margin-bottom: 0.5rem;
+    z-index: -10;
+}
+
+.edit_container_right_space_text {
+    /* max-height: 20rem; */
+    width: 35rem;
+    height: 18rem;
+    overflow-y: auto;
+    resize: none;
+    z-index: -10;
+    color: white;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 20px;
+}
